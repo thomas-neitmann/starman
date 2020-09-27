@@ -3,6 +3,8 @@ safeHead []     = Nothing
 safeHead (x:xs) = Just x
 
 check :: String -> String -> Maybe Char -> (Bool, String)
+-- The first case will ensure that the `n` in `mkguess` is *not*
+-- reduced when the user only hits enter
 check word display Nothing = (True, display)
 check word display (Just c) =
   let
